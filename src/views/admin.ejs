@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div class="container" >
+        <div class="section" >
+
+            <div class="section-menu" >
+                <% user.forEach(e => { %>
+                    <h1>Role <%= e.role %></h1>
+                <% }) %>
+                <div class="menu" >
+                    <ul>
+                        <li><a id="teacher" href="#">O'qituvchilar</a></li>
+                        <li><a id="student" href="#">O'quvchilar</a></li>
+                        <li> <a id="group" href="#">Guruhlar</a></li>
+                        <li> <a id="course" href="#">Kurslar</a></li>
+                    </ul>
+                </div>
+                <form action="/" method="get" enctype="application/x-www-form-urlencoded">
+                    <button type="submit" >Sign out</button>
+                </form>
+            </div>
+
+            <div class="section-mine" >
+                <div id="teachermodal1" class="teacher-section" >
+                    <div class="wrapper" >
+                        <div class="wrapper-title" >
+                            <h2>O'qituvchilar</h2>
+                            <button class="new" data-modal="modal1">Add New Teacher</button>
+                        </div>
+                        <br> <br>
+                        <hr>
+                        <br>
+                        <div class="wrapper-list" >
+                            <table>
+                                <thead>
+                                  <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Course</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <% teacherData.forEach(e =>{ %>
+                                        <tr>
+                                            <td><%= e.id %></td>
+                                            <td><%= e.username %></td>
+                                            <td><%= e.course %></td>
+                                          </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="modal1" class="modal" >
+                        <button class="close">Close</button>
+                        <form  action="/admin" method="post" enctype="application/x-www-form-urlencoded">
+                            <br><label>Name</label>
+                            <input name="username" type="text" placeholder="username" autocomplete="off"><br> <br>
+                            <label>Password</label>
+                            <input name="password" type="text" placeholder="password" autocomplete="off"><br> <br>
+                            <label>Couser</label>
+                            <select name="course" id="couser">
+                                <% courseData.forEach(e => { %>
+                                    <option value="<%= e.name %>"><%= e.name %></option>
+                                <% }) %>
+                            </select> <br> <br>
+                            <label>Group</label>
+                            <input name="groups" type="text" placeholder="groups" autocomplete="off"><br> <br>
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="studentmodal2" class="student-section" >
+                    <div class="wrapper" >
+                        <div class="wrapper-title" >
+                            <h2>O'quvchilar</h2>
+                             <button class="new" data-modal="modal2">Add New Student</button>
+                            </div>
+                        <br> <br>
+                        <hr>
+                        <br>
+                        <div class="wrapper-list" >
+                            <table>
+                                <thead>
+                                  <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Group</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <% studentData.forEach(e =>{ %>
+                                        <tr>
+                                            <td><%= e.id %></td>
+                                            <td><%= e.username %></td>
+                                            <td><%= e.phonenumber %></td>
+                                            <td><%= e.group %></td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div id="modal2" class="modal" >
+                        <button class="close">Close</button>
+                        <form  action="/admin/student" method="post" enctype="application/x-www-form-urlencoded">
+                            <br>
+                            <label>Name</label>
+                            <input name="username" type="text" placeholder="username" autocomplete="off">
+                            <br> <br>
+                            <label>Password</label>
+                            <input name="password" type="text" placeholder="password" autocomplete="off">
+                            <br> <br>
+                            <label>Phone number</label>
+                            <input name="phonenumber" type="text" placeholder="phonenumber" autocomplete="off">
+                            <br> <br>
+                            <label>Group</label>
+                            <select name="groups" id="groups">
+                                <% groupData.forEach(e => { %>
+                                    <option value="<%= e.name %>"><%= e.name %></option>
+                                <% }) %>
+                            </select>
+                            <br> <br>
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div id="groupmodal3" class="group-section" >
+                    <div class="wrapper" >
+                        <div class="wrapper-title" >
+                            <h2>Guruhlar</h2>
+                            <button class="new" data-modal="modal3">Add New Group</button>
+                        </div>
+                        <br> <br>
+                        <hr>
+                        <br>
+                        <div class="wrapper-list" >
+                            <table>
+                                <thead>
+                                  <tr>
+                                    <th>Guruh nomi</th>
+                                    <th>kurs nomi</th>
+                                    <th>O'qituvchilar</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <% groupData.forEach(e =>{ %>
+                                        <tr>
+                                            <td><%= e.groupname %></td>
+                                            <td><%= e.course %></td>
+                                            <td><%= e.teacher %></td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div id="modal3" class="modal" >
+                        <button class="close">Close</button>
+                        <form  action="/admin/group" method="post" enctype="application/x-www-form-urlencoded">
+                            <br>
+                            <label>Group name</label>
+                            <input name="groupname" type="text" placeholder="name of group" autocomplete="off">
+                            <br> <br>
+                            <label>Course</label>
+                            <select name="course" id="course">
+                                <% courseData.map((e, i, _) => { %>
+                                    <option value="<%= e.name %>"><%= e.name %></option>
+                                <% }) %>
+                            </select>
+                            <br> <br>
+                            <label>Teacher</label>
+                            <select name="teacher" id="teacher">
+                                <% teacherData.forEach(e => { %>
+                                    <option value="<%= e.username %>"><%= e.username %></option>
+                                <% }) %>
+                            </select>
+                            <br> <br>
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+
+
+                </div>
+
+                <div id="coursemodal4" class="course-section" >
+                    <div class="wrapper" >
+                        <div class="wrapper-title" >
+                            <h2>Guruhlar</h2>
+                            <button class="new" data-modal="modal4">Add New Course</button>
+                        </div>
+                        <br><br><hr><br>
+                        <div class="course-list" >
+                            
+                            <% courseData.forEach(e => { %>
+                                <div class="course" >
+                                    <br>
+                                    <h3><%= e.name %></h3>
+                                    <br>
+                                    <p><%= e.description %></p>
+                                    <br>
+                                    <h3><%= e.price %> so'm</h3>
+                                </div>
+                            <% }) %>
+                        </div>
+                    </div>
+
+                    <div id="modal4" class="modal" >
+                        <button class="close">Close</button>
+                        <form  action="/admin/course" method="post" enctype="application/x-www-form-urlencoded">
+                            <br>
+                            <label>Course name</label>
+                            <input name="name" type="text" placeholder="Name of group" autocomplete="off">
+                            <br> <br>
+                            <label>Description</label>
+                            <input name="description" type="text" placeholder="Description" >
+                            <br> <br>
+                            <label>Price</label>    
+                            <input name="price" type="text"  placeholder="Price" id="price">
+                            <br> <br>
+                            <button type="submit">Create</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/assets/app.js"></script>
+</body>
+</html>

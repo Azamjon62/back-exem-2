@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/auth.style.css">
+    <title>Login page</title>
+
+</head>
+
+<body>
+    <div class="login-root">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+                    <h1>Log In</h1>
+                </div>
+                <div class="formbg-outer">
+                    <div class="formbg">
+                        <div class="formbg-inner padding-horizontal--48">
+                            <span class="padding-bottom--15">Sign in to your account</span>
+                            <form id="stripe-login" action="/auth" enctype="application/x-www-form-urlencoded" method="post">
+                                <div class="field padding-bottom--24">
+                                    <label>Username</label>
+                                    <input type="text" name="username" autocomplete="off" required="off">
+                                </div>
+                                <div class="field padding-bottom--24">
+                                    <div class="grid--50-50">
+                                        <label>Password</label>
+                                        <div class="reset-pass">
+                                            <a href="#">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                    <input type="text" name="password" autocomplete="off">
+                                </div>
+                                <div class="field padding-bottom--24">
+                                    <button type="submit">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="footer-link padding-top--24">
+                        <span>Don't have an account? <a href="https://google.com">Sign up</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

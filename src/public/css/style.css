@@ -1,0 +1,151 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    color: #1a1f36;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Ubuntu,sans-serif;
+}
+
+.container
+{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section
+{
+    display: flex;
+}
+
+.section-menu
+{
+    width: 20%;
+    height: 100vh;
+    background-color: #F1F1F1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu ul
+{
+    margin-bottom: 160px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.menu ul li
+{
+    font-size: 25px;
+    cursor: pointer;
+}
+.menu ul li a:hover
+{
+    color: #1a1f368c;
+}
+.section-menu h3 
+{
+    cursor: pointer;
+}
+.section-menu h3:hover
+{
+    color: #1a1f368c;
+}
+
+/* ----------------- */
+
+.section-mine
+{
+    width: 80%;
+    padding: 30px;
+}
+
+.teacher-section .wrapper
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-title
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.modal
+{
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    background-color: #F9F9F9;
+    width: 400px;
+    height: 100vh;
+}
+
+.student-section
+{
+    display: none;
+}
+
+.group-section
+{
+    display: none;
+}
+
+.course-section
+{
+    display: none;
+}
+
+.course-list
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+}
+
+.course
+{
+    cursor: pointer;
+    background: #ccc;
+    width: 340px;
+    height: 220px;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+.course p
+{
+    font-size: 17px;
+    line-height: 23px;
+}

@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "password": "admin",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "teacher",
+        "password": "teacher",
+        "course": "node js",
+        "groups": "n104",
+        "role": "teacher"
+    },
+    {
+        "id": 3,
+        "username": "student",
+        "password": "student",
+        "phonenumber": "345678908",
+        "group": "n104",
+        "role": "student"
+    }
+]

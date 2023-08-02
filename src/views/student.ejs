@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <div class="section" >
+            <div class="section-menu" >
+                <h1>Student</h1>
+                <div class="menu" >
+                    <ul>
+                        <li> <a href="#">Guruhlar</a></li>
+                    </ul>
+                </div>
+                <form action="/" method="get" enctype="application/x-www-form-urlencoded">
+                    <button type="submit" >Sign out</button>
+                </form>
+            </div>
+    
+            <div class="section-mine" >
+                <div class="teacher-section" >
+
+                    <div class="wrapper" >
+                        <div class="wrapper-title" >
+                            <h2>Guruhlar</h2>
+                        </div> <br> <br> <hr> <br>
+                        <div class="wrapper-list" >
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Kurs nomi</th>
+                                        <th>Guruh nomi</th>
+                                        <th>O'qituvchi</th>
+                                        <th>Vazifa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% userData.forEach(e => { %>
+                                        <tr>
+                                            <td><%= e.course %></td>
+                                            <td><%= e.groups %></td>
+                                            <td><%= e.username %></td>
+                                            <td><button class="new" data-modal="modal1">vazifani ko'rish</button></td>
+                                        </tr>  
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="modal1" class="modal" >
+                        <button class="close">Close</button>
+                        <div>
+                            <% homeworkData.forEach(e => { %>
+                                <p><%= e.text %></p>
+                            <% }) %>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/assets/app.js"></script>
+
+</body>
+</html>
